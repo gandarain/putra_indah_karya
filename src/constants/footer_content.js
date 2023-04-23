@@ -3,23 +3,27 @@ const phone = "0812-6220-0965"
 const links = [
   {
     id : 1,
-    title : "Feature",
+    title : "Services",
     child : [
       {
-        title : "LOREM IPSUM",
-        link : "/"
+        title : "Studi Kelayakan dan Amdal",
+        link : "#appropriateness"
       },
       {
-        title : "LOREM IPSUM",
-        link : "/"
+        title : "Manajemen Proyek dan manajemen Konstruksi",
+        link : "#construction"
       },
       {
-        title : "LOREM IPSUM",
-        link : "/"
+        title : "Studi Pengembangan Wilayah",
+        link : "#development"
       },
       {
-        title : "LOREM IPSUM",
-        link : "/"
+        title : "Survey Pengukuran/Topografi",
+        link : "#measurement"
+      },
+      {
+        title: "Survey Penyelidikan Tanah dan Pondasi",
+        link: "#investigation"
       }
     ]
   },
@@ -28,16 +32,12 @@ const links = [
     title : "About Us",
     child : [
       {
-        title : "Contact Us",
-        link : "/"
+        title : "Our Company",
+        link : "#about"
       },
       {
-        title : "FAQs",
-        link : "/"
-      },
-      { 
-        title : "Privacy Policy",
-        link : "/"
+        title : "Contact Us",
+        link : "#about"
       },
     ]
   },
