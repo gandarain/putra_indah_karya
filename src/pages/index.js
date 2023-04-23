@@ -1,20 +1,20 @@
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-import Hero from "../components/Hero";
-import Feature from '../components/Feature';
-import Service from '../components/Service';
+import Home from "../components/Home";
+import Services from '../components/Services';
+import Expertise from '../components/Expertise';
 import About from '../components/About';
 import Footer from '../components/Footer';
 
-const Home = () => (
+const Page = () => (
   <Layout pageTitle="Putra Indah Karya">
     <Header />
-    <Hero />
+    <Home />
     <About />
-    <Feature/>
-    <Service />
+    <Services />
+    <Expertise />
     <Footer />
   </Layout>
 )
 
-export default Home
+export default Page

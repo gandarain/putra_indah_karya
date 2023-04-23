@@ -4,15 +4,15 @@ import { Container, Row, Col } from "reactstrap";
 import constants from "@/constants";
 
 const {
-  service_content: {
+  expertise_content: {
     title,
     subtitle,
     expertise
   }
 } = constants
 
-const Service = () => (
-  <section className="section" id="service">
+const Expertise = () => (
+  <section className="section" id="expertise">
     <Container>
       <Row className="justify-content-center">
         <Col lg={6} md={8}>
@@ -24,14 +24,14 @@ const Service = () => (
       </Row>
       <Row>
         {
-          expertise.map((service, key) =>
+          expertise.map((item, key) =>
             <Col key={key} lg={4} md={6}>
               <div>
                 <div className="mb-5">
-                    <i className={service.icon}></i>
+                    <i className={item.icon}></i>
                 </div>
-                <h5 className="text-dark font-weight-normal pt-1 mb-4">{service.title}</h5>
-                <p className="text-muted mb-4">{service.desc}</p>
+                <h5 className="text-dark font-weight-normal pt-1 mb-4">{item.title}</h5>
+                <p className="text-muted mb-4">{item.desc}</p>
               </div>
             </Col>
           )
@@ -41,4 +41,4 @@ const Service = () => (
   </section>
 )
 
-export default Service;
+export default Expertise;

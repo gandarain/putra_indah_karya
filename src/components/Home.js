@@ -4,15 +4,14 @@ import { Container, Row, Col } from 'reactstrap';
 import constants from "@/constants";
 
 const {
-  hero_content: {
+  home_content: {
     name,
-    short_description,
-    long_description
+    short_description
   }
 } = constants;
 
-const Hero = () => (
-  <section className="section position-relative">
+const Home = () => (
+  <section className="section position-relative" id="home">
     <Container>
       <Row className="align-items-center">
         <Col lg={6}>
@@ -34,4 +33,4 @@ const Hero = () => (
   </section>
 )
 
-export default Hero;
+export default Home;

@@ -15,10 +15,10 @@ const expertise = [
   }
 ]
 
-const service_content = {
+const expertise_content = {
   title,
   subtitle,
   expertise
 }
 
-export default service_content
+export default expertise_content

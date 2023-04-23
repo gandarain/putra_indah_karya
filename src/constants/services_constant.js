@@ -38,10 +38,10 @@ const content = [
   },
 ]
 
-const feature_constant = {
+const services_constant = {
   title,
   subtitle,
   content
 }
 
-export default feature_constant
+export default services_constant
