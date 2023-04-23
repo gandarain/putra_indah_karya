@@ -12,7 +12,7 @@ const {
 } = constants
 
 const Expertise = () => (
-  <section className="section" id="expertise">
+  <section className="section bg-light" id="expertise">
     <Container>
       <Row className="justify-content-center">
         <Col lg={6} md={8}>

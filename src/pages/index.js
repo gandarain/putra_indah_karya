@@ -6,6 +6,7 @@ import Expertise from '../components/Expertise';
 import About from '../components/About';
 import Contact from "@/components/Contact";
 import Footer from '../components/Footer';
+import Project from "@/components/Project";
 
 const Page = () => (
   <Layout pageTitle="Putra Indah Karya">
@@ -14,6 +15,7 @@ const Page = () => (
     <About />
     <Services />
     <Expertise />
+    <Project />
     <Contact />
     <Footer />
   </Layout>
