@@ -37,7 +37,7 @@ const links = [
       },
       {
         title : "Contact Us",
-        link : "#about"
+        link : "#contact"
       },
     ]
   },
