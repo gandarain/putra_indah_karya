@@ -40,6 +40,9 @@ const Header = () => {
           <NavItem>
             <NavLink href="#expertise">Expertise</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink href="#contact">Contact Us</NavLink>
+          </NavItem>
         </Nav>
       </Collapse>
     </Navbar>

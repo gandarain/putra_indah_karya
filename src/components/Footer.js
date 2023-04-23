@@ -62,7 +62,7 @@ const Footer = () => (
       <Row className="mt-5">
         <Col md={12}>
           <div className="text-center text-muted">
-            <p className="mb-0 f-15">{copyright}</p>
+            <a href="https://gandarain.github.io/gandarainpanjaitan/" className="mb-0 f-15" target="_blank">{copyright}</a>
           </div>
         </Col>
       </Row>
