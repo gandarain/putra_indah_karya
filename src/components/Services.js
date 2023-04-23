@@ -17,7 +17,7 @@ const ServicesBox = (props) => {
     {
       props.services.map((item, key) =>
       (item.id % 2 !== 0 && !props.isBreakpoint) ?
-        <Row key={key} className={item.id === 1 ? "align-items-center" : "align-items-center mt-5"}>
+        <Row key={key} className={item.id === 1 ? "align-items-center" : "align-items-center mt-5"} id={item.ids}>
           <Col md={5} >
             <div>
               <img src={item.img} alt="" className="img-fluid d-block mx-auto"/>
@@ -30,12 +30,11 @@ const ServicesBox = (props) => {
                 </div>
                 <h5 className="text-dark font-weight-normal mb-3 pt-3">{item.title}</h5>
                 <p className="text-muted mb-3 f-15">{item.desc}</p>
-                <a href={item.link} className="f-16 text-warning">Read More <span className="right-icon ml-2">&#8594;</span></a>
               </div>
             </Col>
         </Row>
       :
-      <Row key={key} className="align-items-center mt-5">
+      <Row key={key} className="align-items-center mt-5" id={item.ids}>
         <Col md={6}>
           <div className="mb-4">
             <div className="my-4">
@@ -43,7 +42,6 @@ const ServicesBox = (props) => {
             </div>
             <h5 className="text-dark font-weight-normal mb-3 pt-3">{item.title}</h5>
             <p className="text-muted mb-3 f-15">{item.desc}</p>
-            <a href={item.link} className="f-16 text-warning">Read More <span className="right-icon ml-2">&#8594;</span></a>
           </div>
         </Col>
         <Col md={{size:5, offset:1}} className="mt-5 mt-sm-0">

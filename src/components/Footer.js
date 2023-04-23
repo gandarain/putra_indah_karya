@@ -27,10 +27,10 @@ const Footer = () => (
     <Container>
       <Row>
         <Col lg={4}>
-            <div className="mb-4">
-              <p className="text-muted mt-4 mb-2">{email}</p>
-              <h6 className="text-muted font-weight-normal">{phone}</h6>
-            </div>
+          <div className="mb-4">
+            <p className="text-muted mt-4 mb-2">{email}</p>
+            <h6 className="text-muted font-weight-normal">{phone}</h6>
+          </div>
         </Col>
         <Col lg={8}>
           <Row>
