@@ -39,28 +39,16 @@ const links = [
         title : "Contact Us",
         link : "#contact"
       },
+      {
+        title : "Projects",
+        link : "#project"
+      }
     ]
   },
 ];
 const address = " Jl. Karet 12 No. 12 Simalingkar, Kel. Mangga, Kec. Medan Tuntungan"
 const copyright = "2023 © Ganda Rain Panjaitan. All right reserved"
-const social_media = [
-  {
-    id: 1,
-    link: '#',
-    icon: 'facebook-square'
-  },
-  {
-    id: 2,
-    link: '#',
-    icon: 'instagram-alt'
-  },
-  {
-    id: 1,
-    link: '#',
-    icon: 'linkedin-square'
-  }
-]
+const social_media = []
 const footer_content = {
   email,
   phone,
