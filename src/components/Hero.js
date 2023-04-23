@@ -6,7 +6,6 @@ import constants from "@/constants";
 const {
   hero_content: {
     name,
-    sub_name,
     short_description,
     long_description
   }
