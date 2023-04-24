@@ -16,9 +16,9 @@ const Home = () => (
       <Row className="align-items-center">
         <Col lg={6}>
           <div className="pr-lg-5">
-            <h1 className="mb-4 font-weight-normal line-height-1_4"><span className="text-primary font-weight-medium">CV.</span> {name}</h1>
+            <h1 className="mb-4 font-weight-normal line-height-1_4">{name}</h1>
             <p className="text-muted mb-4 pb-2">{short_description}</p>
-            <a href="#" className="btn btn-warning">
+            <a href="#services" className="btn btn-warning">
               Detail <span className="ml-2 right-icon">&#8594;</span>
             </a>
           </div>

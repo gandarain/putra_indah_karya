@@ -1,4 +1,4 @@
-const name = "CV Putra Indah Karya"
+const name = "CV. Putra Indah Karya"
 const email = "putraindahkarya.konsultan@gmail.com"
 const phone = "0812-6220-0965"
 const links = [
