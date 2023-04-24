@@ -30,11 +30,11 @@ const About = () => (
         <Col md={{ size:7, offset :1 }}>
           <Row>
             <Col md={6}>
-              <h6 className="text-dark font-weight-light f-20 mb-3">Our Mission</h6>
+              <h6 className="text-dark font-weight-light f-20 mb-3">Mission</h6>
               <p className="text-muted font-weight-light">{mission}</p>
             </Col>
             <Col md={6}>
-              <h6 className="text-dark font-weight-light f-20 mb-3">Our Vision</h6>
+              <h6 className="text-dark font-weight-light f-20 mb-3">Vision</h6>
               <p className="text-muted font-weight-light">{vision}</p>
             </Col>
           </Row>
