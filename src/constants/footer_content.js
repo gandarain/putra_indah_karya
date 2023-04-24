@@ -1,3 +1,4 @@
+const name = "CV Putra Indah Karya"
 const email = "putraindahkarya.konsultan@gmail.com"
 const phone = "0812-6220-0965"
 const links = [
@@ -47,7 +48,7 @@ const links = [
   },
 ];
 const address = " Jl. Karet 12 No. 12 Simalingkar, Kel. Mangga, Kec. Medan Tuntungan"
-const copyright = "2023 © Ganda Rain Panjaitan. All right reserved"
+const copyright = "2023 © Created by Ganda Rain Panjaitan"
 const social_media = []
 const footer_content = {
   email,
@@ -55,7 +56,8 @@ const footer_content = {
   links,
   address,
   copyright,
-  social_media
+  social_media,
+  name
 }
 
 export default footer_content

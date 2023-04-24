@@ -5,6 +5,7 @@ import constants from "@/constants";
 
 const {
   footer_content: {
+    name,
     email,
     phone,
     links,
@@ -28,7 +29,8 @@ const Footer = () => (
       <Row>
         <Col lg={4}>
           <div className="mb-4">
-            <p className="text-muted mt-4 mb-2">{email}</p>
+            <p className="footer-social-list">{name}</p>
+            <p className="text-muted">{email}</p>
             <h6 className="text-muted font-weight-normal">{phone}</h6>
           </div>
         </Col>
