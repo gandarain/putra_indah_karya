@@ -24,6 +24,7 @@ const Header = () => {
             width: 40
           }}
         />
+        <span className="font-weight-normal text-dark m-3">CV Putra Indah Karya</span>
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
