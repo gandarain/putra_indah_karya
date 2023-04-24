@@ -18,7 +18,7 @@ const Header = () => {
       <NavbarBrand>
         <img
           alt="logo"
-          src="./images/logo.jpg"
+          src="./images/logo.png"
           style={{
             height: 40,
             width: 40
