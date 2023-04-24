@@ -42,13 +42,7 @@ const content = [
     altText: 'Slide 1',
     caption: 'Slide 1',
     key: 7,
-  },
-  {
-    src: './images/projects/8.jpeg',
-    altText: 'Slide 1',
-    caption: 'Slide 1',
-    key: 8,
-  },
+  }
 ]
 
 const project_content = {
