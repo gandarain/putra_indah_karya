@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <Navbar color="light" light container="md" expand="md" sticky="top">
-      <NavbarBrand href="/">
+      <NavbarBrand>
         <img
           alt="logo"
           src="./images/logo.jpg"
@@ -24,7 +24,7 @@ const Header = () => {
             width: 40
           }}
         />
-        <span className="font-weight-normal text-dark m-3">CV Putra Indah Karya</span>
+        <span className="font-weight-normal text-dark m-3">CV. Putra Indah Karya</span>
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
