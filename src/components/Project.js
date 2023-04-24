@@ -4,32 +4,20 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption,
   Container,
   Row,
   Col
 } from 'reactstrap';
 
-const items = [
-  {
-    src: 'https://picsum.photos/id/123/1200/400',
-    altText: 'Slide 1',
-    caption: 'Slide 1',
-    key: 1,
-  },
-  {
-    src: 'https://picsum.photos/id/456/1200/400',
-    altText: 'Slide 2',
-    caption: 'Slide 2',
-    key: 2,
-  },
-  {
-    src: 'https://picsum.photos/id/678/1200/400',
-    altText: 'Slide 3',
-    caption: 'Slide 3',
-    key: 3,
-  },
-];
+import constants from "@/constants";
+
+const {
+  project_content: {
+    title,
+    subtitle,
+    content
+  }
+} = constants
 
 const Project = (args) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -37,13 +25,13 @@ const Project = (args) => {
 
   const next = () => {
     if (animating) return;
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    const nextIndex = activeIndex === content.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   };
 
   const previous = () => {
     if (animating) return;
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    const nextIndex = activeIndex === 0 ? content.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   };
 
@@ -52,18 +40,14 @@ const Project = (args) => {
     setActiveIndex(newIndex);
   };
 
-  const slides = items.map((item) => {
+  const slides = content.map((item) => {
     return (
       <CarouselItem
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
-        <CarouselCaption
-          captionText={item.caption}
-          captionHeader={item.caption}
-        />
+        <img src={item.src} alt={item.altText} className="img-thumbnail d-block mx-auto" />
       </CarouselItem>
     );
   });
@@ -74,34 +58,38 @@ const Project = (args) => {
         <Row className="justify-content-center">
           <Col lg={6} md={8}>
             <div className="title text-center mb-5">
-              <h3 className="font-weight-normal text-dark"><span className="text-warning">Project</span></h3>
-              <p className="text-muted">Project terbaru kami</p>
+              <h3 className="font-weight-normal text-dark"><span className="text-warning">{title}</span></h3>
+              <p className="text-muted">{subtitle}</p>
             </div>
           </Col>
         </Row>
-        <Carousel
-          activeIndex={activeIndex}
-          next={next}
-          previous={previous}
-          {...args}
-        >
-          <CarouselIndicators
-            items={items}
-            activeIndex={activeIndex}
-            onClickHandler={goToIndex}
-          />
-          {slides}
-          <CarouselControl
-            direction="prev"
-            directionText="Previous"
-            onClickHandler={previous}
-          />
-          <CarouselControl
-            direction="next"
-            directionText="Next"
-            onClickHandler={next}
-          />
-        </Carousel>
+        <Row className="justify-content-center">
+          <Col md={10}>
+            <Carousel
+              activeIndex={activeIndex}
+              next={next}
+              previous={previous}
+              {...args}
+            >
+              <CarouselIndicators
+                items={content}
+                activeIndex={activeIndex}
+                onClickHandler={goToIndex}
+              />
+              {slides}
+              <CarouselControl
+                direction="prev"
+                directionText="Previous"
+                onClickHandler={previous}
+              />
+              <CarouselControl
+                direction="next"
+                directionText="Next"
+                onClickHandler={next}
+              />
+            </Carousel>
+          </Col>
+        </Row>
       </Container>
     </section>
   );
