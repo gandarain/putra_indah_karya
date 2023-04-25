@@ -15,7 +15,7 @@ import emailjs from '@emailjs/browser'
 import hooks from '@/hooks'
 import constants from '@/constants'
 
-const { AnimationOnScrollView } = hooks
+const { animationOnScrollView } = hooks
 const {
   contact_content: {
     title,
@@ -35,7 +35,7 @@ const renderContentItems = () => (
 
 const Contact = () => {
   const domRef = useRef()
-  const { isVisible } = AnimationOnScrollView(domRef)
+  const { isVisible } = animationOnScrollView(domRef)
   const form = useRef()
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
