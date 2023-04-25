@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 
-import { AnimationOnScrollView } from '../hooks'
+import hooks from '@/hooks'
 import constants from '@/constants'
 
+const { AnimationOnScrollView } = hooks
 const {
   services_constant: {
     title,
