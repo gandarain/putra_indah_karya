@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap'
 import hooks from '@/hooks'
 import constants from '@/constants'
 
-const { AnimationOnScrollView } = hooks
+const { animationOnScrollView } = hooks
 const {
   expertise_content: {
     title,
@@ -15,7 +15,7 @@ const {
 
 const Expertise = () => {
   const domRef = useRef()
-  const { isVisible } = AnimationOnScrollView(domRef)
+  const { isVisible } = animationOnScrollView(domRef)
 
   return (
     <section
