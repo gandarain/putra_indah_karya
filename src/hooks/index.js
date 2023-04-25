@@ -1,5 +1,5 @@
-import animationOnScrollView from './animationOnScrollView'
+import AnimationOnScrollView from './animationOnScrollView'
 
-const hooks = { animationOnScrollView }
+const hooks = { AnimationOnScrollView }
 
 export default hooks
