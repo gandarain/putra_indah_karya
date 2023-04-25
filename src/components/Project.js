@@ -12,7 +12,7 @@ import {
 import hooks from '@/hooks'
 import constants from '@/constants'
 
-const { animationOnScrollView } = hooks
+const { AnimationOnScrollView } = hooks
 const {
   project_content: {
     title,
@@ -23,7 +23,7 @@ const {
 
 const Project = (args) => {
   const domRef = useRef()
-  const { isVisible } = animationOnScrollView(domRef)
+  const { isVisible } = AnimationOnScrollView(domRef)
   const [activeIndex, setActiveIndex] = useState(0)
   const [animating, setAnimating] = useState(false)
 

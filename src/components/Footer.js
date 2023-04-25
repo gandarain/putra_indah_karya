@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap'
 import hooks from '@/hooks'
 import constants from '@/constants'
 
-const { animationOnScrollView } = hooks
+const { AnimationOnScrollView } = hooks
 const {
   footer_content: {
     name,
@@ -27,7 +27,7 @@ const renderSocialMedia = () => (
 
 const Footer = () => {
   const domRef = useRef()
-  const { isVisible } = animationOnScrollView(domRef)
+  const { isVisible } = AnimationOnScrollView(domRef)
   return (
     <section
       ref={domRef}

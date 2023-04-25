@@ -1,7 +1,6 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { useState, useEffect } from 'react'
 
-const animationOnScrollView = (domRef) => {
+const AnimationOnScrollView = (domRef) => {
   const [isVisible, setVisible] = useState(true)
 
   useEffect(() => {
@@ -20,4 +19,4 @@ const animationOnScrollView = (domRef) => {
   }
 }
 
-export default animationOnScrollView
+export default AnimationOnScrollView
