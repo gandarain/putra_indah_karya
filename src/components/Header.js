@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import {
   Collapse,
   Navbar,
@@ -7,11 +7,11 @@ import {
   Nav,
   NavItem,
   NavLink
-} from 'reactstrap';
+} from 'reactstrap'
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+  const [isOpen, setIsOpen] = useState(false)
+  const toggle = () => setIsOpen(!isOpen)
 
   return (
     <Navbar color="light" light container="md" expand="md" sticky="top">
@@ -50,4 +50,4 @@ const Header = () => {
   )
 }
 
-export default Header;
+export default Header

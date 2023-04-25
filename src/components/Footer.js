@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
-import { Container, Row, Col } from "reactstrap";
+import React, { useRef } from 'react'
+import { Container, Row, Col } from 'reactstrap'
 
-import { AnimationOnScrollView } from "../hooks";
-import constants from "@/constants";
+import { AnimationOnScrollView } from '../hooks'
+import constants from '@/constants'
 
 const {
   footer_content: {
@@ -25,12 +25,12 @@ const renderSocialMedia = () => (
 )
 
 const Footer = () => {
-  const domRef = useRef();
+  const domRef = useRef()
   const { isVisible } = AnimationOnScrollView(domRef)
   return (
     <section
       ref={domRef}
-      className={`section bg-light ${isVisible ? "appear" : ''}`}
+      className={`section bg-light ${isVisible ? 'appear' : ''}`}
     >
       <Container>
         <Row>
@@ -80,4 +80,4 @@ const Footer = () => {
   )
 }
 
-export default Footer;
+export default Footer

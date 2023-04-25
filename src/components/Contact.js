@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react'
 import {
   Container,
   Row,
@@ -9,11 +9,11 @@ import {
   Input,
   Button,
   FormFeedback
-} from "reactstrap";
-import emailjs from '@emailjs/browser';
+} from 'reactstrap'
+import emailjs from '@emailjs/browser'
 
-import { AnimationOnScrollView } from "../hooks";
-import constants from "@/constants";
+import { AnimationOnScrollView } from '../hooks'
+import constants from '@/constants'
 
 const {
   contact_content: {
@@ -33,9 +33,9 @@ const renderContentItems = () => (
 )
 
 const Contact = () => {
-  const domRef = useRef();
+  const domRef = useRef()
   const { isVisible } = AnimationOnScrollView(domRef)
-  const form = useRef();
+  const form = useRef()
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
@@ -45,7 +45,7 @@ const Contact = () => {
   const [disabledButton, setDisabledButton] = useState(true)
 
   const validateEmail = (value) => {
-    const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if (emailRex.test(value)) {
       setInvalidEmail(false)
       setDisabledButton(false)
@@ -83,16 +83,16 @@ const Contact = () => {
       setEmail('')
       setName('')
       setMessage('')
-      alert("Pesan berhasil dikirim");
+      alert('Pesan berhasil dikirim')
     } catch (error) {
-      alert("Pesan gagal dikirm");
+      alert('Pesan gagal dikirm')
     }
   }
 
   return (
     <section
       ref={domRef}
-      className={`section ${isVisible ? "appear" : ''}`}
+      className={`section ${isVisible ? 'appear' : ''}`}
       id="contact"
     >
       <Container>

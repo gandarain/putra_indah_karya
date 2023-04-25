@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
-import { Container, Row, Col } from "reactstrap";
+import React, { useRef } from 'react'
+import { Container, Row, Col } from 'reactstrap'
 
-import { AnimationOnScrollView } from "../hooks";
-import constants from "@/constants";
+import { AnimationOnScrollView } from '../hooks'
+import constants from '@/constants'
 
 const {
   expertise_content: {
@@ -13,13 +13,13 @@ const {
 } = constants
 
 const Expertise = () => {
-  const domRef = useRef();
+  const domRef = useRef()
   const { isVisible } = AnimationOnScrollView(domRef)
 
   return (
     <section
       ref={domRef}
-      className={`section bg-light ${isVisible ? "appear" : ''}`}
+      className={`section bg-light ${isVisible ? 'appear' : ''}`}
       id="expertise"
     >
       <Container>
@@ -51,4 +51,4 @@ const Expertise = () => {
   )
 }
 
-export default Expertise;
+export default Expertise

@@ -1,24 +1,24 @@
-import React, { useRef } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import React, { useRef } from 'react'
+import { Container, Row, Col } from 'reactstrap'
 
-import { AnimationOnScrollView } from "../hooks";
-import constants from "@/constants";
+import { AnimationOnScrollView } from '../hooks'
+import constants from '@/constants'
 
 const {
   home_content: {
     name,
     short_description
   }
-} = constants;
+} = constants
 
 const Home = () => {
-  const domRef = useRef();
+  const domRef = useRef()
   const { isVisible } = AnimationOnScrollView(domRef)
 
   return (
     <section
       ref={domRef}
-      className={`section position-relative ${isVisible ? "appear" : ""}`}
+      className={`section position-relative ${isVisible ? 'appear' : ''}`}
       id="home"
     >
       <Container>
@@ -43,4 +43,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Home
