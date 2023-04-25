@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react'
 import {
   Container,
   Row,
@@ -8,12 +8,12 @@ import {
   Label,
   Input,
   Button,
-  FormFeedback,
-  Alert
-} from "reactstrap";
-import emailjs from '@emailjs/browser';
+  FormFeedback
+} from 'reactstrap'
+import emailjs from '@emailjs/browser'
 
-import constants from "@/constants";
+import { AnimationOnScrollView } from '../hooks'
+import constants from '@/constants'
 
 const {
   contact_content: {
@@ -33,7 +33,9 @@ const renderContentItems = () => (
 )
 
 const Contact = () => {
-  const form = useRef();
+  const domRef = useRef()
+  const { isVisible } = AnimationOnScrollView(domRef)
+  const form = useRef()
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
@@ -43,7 +45,7 @@ const Contact = () => {
   const [disabledButton, setDisabledButton] = useState(true)
 
   const validateEmail = (value) => {
-    const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if (emailRex.test(value)) {
       setInvalidEmail(false)
       setDisabledButton(false)
@@ -81,14 +83,18 @@ const Contact = () => {
       setEmail('')
       setName('')
       setMessage('')
-      alert("Pesan berhasil dikirim");
+      alert('Pesan berhasil dikirim')
     } catch (error) {
-      alert("Pesan gagal dikirm");
+      alert('Pesan gagal dikirm')
     }
   }
 
   return (
-    <section className="section" id="contact">
+    <section
+      ref={domRef}
+      className={`section ${isVisible ? 'appear' : ''}`}
+      id="contact"
+    >
       <Container>
         <Row className="justify-content-center">
           <Col lg={6} md={8}>

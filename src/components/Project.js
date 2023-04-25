@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react'
 import {
   Carousel,
   CarouselItem,
@@ -7,9 +7,10 @@ import {
   Container,
   Row,
   Col
-} from 'reactstrap';
+} from 'reactstrap'
 
-import constants from "@/constants";
+import { AnimationOnScrollView } from '../hooks'
+import constants from '@/constants'
 
 const {
   project_content: {
@@ -20,25 +21,27 @@ const {
 } = constants
 
 const Project = (args) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [animating, setAnimating] = useState(false);
+  const domRef = useRef()
+  const { isVisible } = AnimationOnScrollView(domRef)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [animating, setAnimating] = useState(false)
 
   const next = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === content.length - 1 ? 0 : activeIndex + 1;
-    setActiveIndex(nextIndex);
-  };
+    if (animating) return
+    const nextIndex = activeIndex === content.length - 1 ? 0 : activeIndex + 1
+    setActiveIndex(nextIndex)
+  }
 
   const previous = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === 0 ? content.length - 1 : activeIndex - 1;
-    setActiveIndex(nextIndex);
-  };
+    if (animating) return
+    const nextIndex = activeIndex === 0 ? content.length - 1 : activeIndex - 1
+    setActiveIndex(nextIndex)
+  }
 
   const goToIndex = (newIndex) => {
-    if (animating) return;
-    setActiveIndex(newIndex);
-  };
+    if (animating) return
+    setActiveIndex(newIndex)
+  }
 
   const slides = content.map((item) => {
     return (
@@ -49,11 +52,15 @@ const Project = (args) => {
       >
         <img src={item.src} alt={item.altText} className="img-thumbnail d-block mx-auto" />
       </CarouselItem>
-    );
-  });
+    )
+  })
 
   return (
-    <section className="section position-relative" id="project">
+    <section
+      ref={domRef}
+      className={`section position-relative ${isVisible ? 'appear' : ''}`}
+      id="project"
+    >
       <Container>
         <Row className="justify-content-center">
           <Col lg={6} md={8}>
@@ -92,7 +99,7 @@ const Project = (args) => {
         </Row>
       </Container>
     </section>
-  );
+  )
 }
 
-export default Project;
+export default Project

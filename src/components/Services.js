@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { Container, Row, Col } from "reactstrap";
+import React, { useEffect, useState, useCallback, useRef } from 'react'
+import { Container, Row, Col } from 'reactstrap'
 
-import constants from "@/constants";
+import { AnimationOnScrollView } from '../hooks'
+import constants from '@/constants'
 
 const {
   services_constant: {
@@ -17,7 +18,7 @@ const ServicesBox = (props) => {
     {
       props.services.map((item, key) =>
       (item.id % 2 !== 0 && !props.isBreakpoint) ?
-        <Row key={key} className={item.id === 1 ? "align-items-center" : "align-items-center mt-5"} id={item.ids}>
+        <Row key={key} className={item.id === 1 ? 'align-items-center' : 'align-items-center mt-5'} id={item.ids}>
           <Col md={5} >
             <div>
               <img src={item.img} alt="" className="img-fluid d-block mx-auto"/>
@@ -53,39 +54,45 @@ const ServicesBox = (props) => {
       )
     }
     </>
-  );
+  )
 }
 
 const useMediaQuery = (width) => {
-  const [targetReached, setTargetReached] = useState(false);
+  const [targetReached, setTargetReached] = useState(false)
 
   const updateTarget = useCallback((e) => {
     if (e.matches) {
-      setTargetReached(true);
+      setTargetReached(true)
     } else {
-      setTargetReached(false);
+      setTargetReached(false)
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
-    const media = window.matchMedia(`(max-width: ${width}px)`);
-    media.addListener(updateTarget);
+    const media = window.matchMedia(`(max-width: ${width}px)`)
+    media.addListener(updateTarget)
 
     if (media.matches) {
-      setTargetReached(true);
+      setTargetReached(true)
     }
 
-    return () => media.removeListener(updateTarget);
-  }, []);
+    return () => media.removeListener(updateTarget)
+  }, [])
 
-  return targetReached;
-};
+  return targetReached
+}
 
 const Services = () => {
   const isBreakpoint = useMediaQuery(768)
+  const domRef = useRef()
+  const { isVisible } = AnimationOnScrollView(domRef)
 
   return (
-    <section className="section" id="services">
+    <section
+      ref={domRef}
+      className={`section ${isVisible ? 'appear' : ''}`}
+      id="services"
+    >
       <Container>
         <Row className="justify-content-center">
           <Col lg={6} md={8}>
@@ -98,7 +105,7 @@ const Services = () => {
         <ServicesBox services={content} isBreakpoint={isBreakpoint} />
       </Container>
     </section>
-  );
+  )
 }
 
-export default Services;
+export default Services

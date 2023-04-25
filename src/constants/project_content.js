@@ -1,5 +1,5 @@
-const title = "Project"
-const subtitle = "Berikut ini merupakan project project yang telah berhasil kami selesaikan. Mulai dari survey, design dan development."
+const title = 'Project'
+const subtitle = 'Berikut ini merupakan project project yang telah berhasil kami selesaikan. Mulai dari survey, design dan development.'
 const content = [
   {
     src: './images/projects/1.jpeg',
