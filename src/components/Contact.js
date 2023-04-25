@@ -8,11 +8,11 @@ import {
   Label,
   Input,
   Button,
-  FormFeedback,
-  Alert
+  FormFeedback
 } from "reactstrap";
 import emailjs from '@emailjs/browser';
 
+import { AnimationOnScrollView } from "../hooks";
 import constants from "@/constants";
 
 const {
@@ -33,6 +33,8 @@ const renderContentItems = () => (
 )
 
 const Contact = () => {
+  const domRef = useRef();
+  const { isVisible } = AnimationOnScrollView(domRef)
   const form = useRef();
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
@@ -88,7 +90,11 @@ const Contact = () => {
   }
 
   return (
-    <section className="section" id="contact">
+    <section
+      ref={domRef}
+      className={`section ${isVisible ? "appear" : ''}`}
+      id="contact"
+    >
       <Container>
         <Row className="justify-content-center">
           <Col lg={6} md={8}>

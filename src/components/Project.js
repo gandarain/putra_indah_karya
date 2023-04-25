@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Carousel,
   CarouselItem,
@@ -9,6 +9,7 @@ import {
   Col
 } from 'reactstrap';
 
+import { AnimationOnScrollView } from "../hooks";
 import constants from "@/constants";
 
 const {
@@ -20,6 +21,8 @@ const {
 } = constants
 
 const Project = (args) => {
+  const domRef = useRef();
+  const { isVisible } = AnimationOnScrollView(domRef)
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -53,7 +56,11 @@ const Project = (args) => {
   });
 
   return (
-    <section className="section position-relative" id="project">
+    <section
+      ref={domRef}
+      className={`section position-relative ${isVisible ? "appear" : ''}`}
+      id="project"
+    >
       <Container>
         <Row className="justify-content-center">
           <Col lg={6} md={8}>

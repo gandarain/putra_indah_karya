@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { Container, Row, Col } from "reactstrap";
 
+import { AnimationOnScrollView } from "../hooks";
 import constants from "@/constants";
 
 const {
@@ -83,9 +84,15 @@ const useMediaQuery = (width) => {
 
 const Services = () => {
   const isBreakpoint = useMediaQuery(768)
+  const domRef = useRef();
+  const { isVisible } = AnimationOnScrollView(domRef)
 
   return (
-    <section className="section" id="services">
+    <section
+      ref={domRef}
+      className={`section ${isVisible ? "appear" : ''}`}
+      id="services"
+    >
       <Container>
         <Row className="justify-content-center">
           <Col lg={6} md={8}>

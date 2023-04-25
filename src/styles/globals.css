@@ -16,7 +16,19 @@ a {
 }
 
 .section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 1200ms ease-out, transform 600ms ease-out,
+    visibility 1200ms ease-out;
+  will-change: opacity, transform, visibility;
   padding-top: 100px;
   padding-bottom: 100px;
   position: relative;
+}
+
+.section.appear {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
 }
