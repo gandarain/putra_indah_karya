@@ -1,14 +1,16 @@
-import {
+import components from '@/components'
+
+const {
   Layout,
   Header,
-  Home,
   About,
   Services,
+  Home,
   Expertise,
   Project,
   Contact,
   Footer
-} from '../components'
+} = components
 
 const Page = () => (
   <Layout pageTitle="Putra Indah Karya">

@@ -12,9 +12,10 @@ import {
 } from 'reactstrap'
 import emailjs from '@emailjs/browser'
 
-import { AnimationOnScrollView } from '../hooks'
+import hooks from '@/hooks'
 import constants from '@/constants'
 
+const { AnimationOnScrollView } = hooks
 const {
   contact_content: {
     title,

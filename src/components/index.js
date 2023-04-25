@@ -8,8 +8,8 @@ import Layout from './Layout'
 import Project from './Project'
 import Services from './Services'
 
-export {
-	About,
+const components = {
+  About,
   Contact,
   Expertise,
   Footer,
@@ -19,3 +19,5 @@ export {
   Project,
   Services
 }
+
+export default components

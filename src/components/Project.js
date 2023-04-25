@@ -9,9 +9,10 @@ import {
   Col
 } from 'reactstrap'
 
-import { AnimationOnScrollView } from '../hooks'
+import hooks from '@/hooks'
 import constants from '@/constants'
 
+const { AnimationOnScrollView } = hooks
 const {
   project_content: {
     title,
