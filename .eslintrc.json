@@ -23,6 +23,20 @@
         "includeExports": true
       }
     ],
-    "no-return-assign": "error"
+    "no-return-assign": "error",
+    "no-restricted-modules": [
+      "error",
+      {
+        "paths": [
+          "foo-module",
+          "bar-module"
+        ],
+        "patterns": [
+          "foo-module/private/*",
+          "bar-module/*",
+          "!baz-module/good"
+        ]
+      }
+    ]
   }
 }
