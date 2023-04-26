@@ -1,9 +1,14 @@
+import { Analytics } from '@vercel/analytics/react'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/globals.css'
 import '../styles/header.css'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const MyApp = ({ Component, pageProps }) => (
+  <>
+    <Component {...pageProps} />
+    <Analytics />
+  </>
+)
 
 export default MyApp
