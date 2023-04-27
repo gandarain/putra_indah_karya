@@ -22,7 +22,7 @@ const ServicesBox = (props) => {
         <Row key={key} className={item.id === 1 ? 'align-items-center' : 'align-items-center mt-5'} id={item.ids}>
           <Col md={5} >
             <div>
-              <img src={item.img} alt="" className="img-fluid d-block mx-auto"/>
+              <img src={item.img} alt="" className="img-fluid d-block mx-auto rounded" style={{ maxWidth: 300 }}/>
             </div>
           </Col>
             <Col md={{size:6, offset:1}}>
@@ -48,7 +48,7 @@ const ServicesBox = (props) => {
         </Col>
         <Col md={{size:5, offset:1}} className="mt-5 mt-sm-0">
           <div>
-            <img src={item.img} alt="" className="img-fluid d-block mx-auto"/>
+            <img src={item.img} alt="" className="img-fluid d-block mx-auto rounded" style={{ maxWidth: 300 }} />
           </div>
         </Col>
       </Row>

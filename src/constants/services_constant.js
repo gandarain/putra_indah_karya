@@ -31,7 +31,7 @@ const content = [
   },
   {
     id : 5,
-    img : './images/investigation.png', 
+    img : './images/services/5.jpg', 
     title : 'Survey Penyelidikan Tanah dan Pondasi', 
     desc : 'Pada masa perencanaan bangunan dilakukan, penyelidikan terhadap kondisi lapisan tanah yang ada dibawah bangunan akan sangat menentukan terhadap daya dukung bangunan itu sendiri. Oleh sebab itu, penyelidikan terhadap kekuatan dan daya dukung tanah akan sangat diperlukan guna menetukan perencanaan pondasi bangunan yang paling ekonomis dan aman.',
     ids : 'investigation'
