@@ -42,6 +42,36 @@ const content = [
     altText: 'Slide 1',
     caption: 'Slide 1',
     key: 7,
+  },
+  {
+    src: './images/projects/8.jpg',
+    altText: 'Slide 1',
+    caption: 'Slide 1',
+    key: 8,
+  },
+  {
+    src: './images/projects/9.jpg',
+    altText: 'Slide 1',
+    caption: 'Slide 1',
+    key: 9,
+  },
+  {
+    src: './images/projects/10.jpg',
+    altText: 'Slide 1',
+    caption: 'Slide 1',
+    key: 10,
+  },
+  {
+    src: './images/projects/11.jpg',
+    altText: 'Slide 1',
+    caption: 'Slide 1',
+    key: 11,
+  },
+  {
+    src: './images/projects/12.jpg',
+    altText: 'Slide 1',
+    caption: 'Slide 1',
+    key: 12,
   }
 ]
 
