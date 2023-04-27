@@ -20,7 +20,7 @@ const {
 const renderSocialMedia = () => (
   <ul className="list-unstyled footer-social-list mt-4">
     {social_media.map(item => (
-      <li key={item.id} className="list-inline-item"><a href={item.link}><i className={`bx bxl-${item.icon}`}/></a></li>
+      <li key={item.id} className="list-inline-item"><a href={item.link} target="_blank"><i className={`bx bxl-${item.icon}`}/></a></li>
     ))}
   </ul>
 )

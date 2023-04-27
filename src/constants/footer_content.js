@@ -49,7 +49,13 @@ const links = [
 ]
 const address = ' Jl. Karet 12 No. 12 Simalingkar, Kel. Mangga, Kec. Medan Tuntungan'
 const copyright = '2023 © Created by Ganda Rain Panjaitan'
-const social_media = []
+const social_media = [
+  {
+    id: 1,
+    link: 'https://www.instagram.com/p/Cp-psP8vnFP/?igshid=YmMyMTA2M2Y=',
+    icon: 'instagram-alt'
+  },
+]
 const footer_content = {
   email,
   phone,
