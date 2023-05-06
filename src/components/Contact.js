@@ -26,7 +26,12 @@ const {
 
 const renderContentItems = () => (
   content.map(item => (
-    <div key={item.id} className="title text-center mb-5 bg-light" style={{ padding: 10, borderRadius: 10 }}>
+    <div
+      key={item.id}
+      className="title text-center mb-5 bg-light"
+      style={{ padding: 10, borderRadius: 10, cursor: 'pointer' }}
+      onClick={() => item.link ? window.open(item.link) : {}}
+    >
       <h5 className="text-dark font-weight-normal mb-3 pt-3">{item.title}</h5>
       <p className="text-muted">{item.desc}</p>
     </div>
