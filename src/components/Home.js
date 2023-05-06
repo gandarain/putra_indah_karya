@@ -35,7 +35,7 @@ const Home = () => {
           </Col>
           <Col lg={6}>
             <div className="mt-5 mt-lg-0">
-              <img src="./images/home.png" alt="" className="img-fluid mx-auto d-block"/>
+              <img src="./images/home.jpg" alt="" className="img-fluid mx-auto d-block rounded"/>
             </div>
           </Col>
         </Row>
