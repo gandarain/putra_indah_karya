@@ -7,8 +7,7 @@ import {
   FormGroup,
   Label,
   Input,
-  Button,
-  FormFeedback
+  Button
 } from 'reactstrap'
 import emailjs from '@emailjs/browser'
 
@@ -45,42 +44,6 @@ const Contact = () => {
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
-  const [invalidEmail, setInvalidEmail] = useState(false)
-  const [invalidName, setInvalidName] = useState(false)
-  const [invalidMessage, setInvalidMessage] = useState(false)
-  const [disabledButton, setDisabledButton] = useState(true)
-
-  const validateEmail = (value) => {
-    const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    if (emailRex.test(value)) {
-      setInvalidEmail(false)
-      setDisabledButton(false)
-    } else {
-      setInvalidEmail(true)
-      setDisabledButton(true)
-    }
-  }
-
-  const validateName = (value) => {
-    const nameRex = /^[a-z ,.'-]+$/i
-    if (nameRex.test(value)) {
-      setInvalidName(false)
-      setDisabledButton(false)
-    } else {
-      setInvalidName(true)
-      setDisabledButton(true)
-    }
-  }
-
-  const validateMessage = (value) => {
-    if (value.length >= 10) {
-      setInvalidMessage(false)
-      setDisabledButton(false)
-    } else {
-      setInvalidMessage(true)
-      setDisabledButton(true)
-    }
-  }
 
   const onSubmitForm = async (e) => {
     e.preventDefault()
@@ -127,18 +90,13 @@ const Contact = () => {
                 </Label>
                 <Input
                   value={email}
-                  onChange={e => {
-                    setEmail(e.target.value)
-                    validateEmail(e.target.value)
-                  }}
+                  onChange={e => setEmail(e.target.value)}
                   id="email"
                   name="email"
                   placeholder="Enter your email"
                   type="email"
-                  invalid={invalidEmail}
                   required
                 />
-                {invalidEmail && <FormFeedback>Please input valid email</FormFeedback>}
               </FormGroup>
               <FormGroup>
                 <Label for="name">
@@ -146,18 +104,14 @@ const Contact = () => {
                 </Label>
                 <Input
                   value={name}
-                  onChange={e => {
-                    setName(e.target.value)
-                    validateName(e.target.value)
-                  }}
+                  onChange={e => setName(e.target.value)}
                   id="name"
                   name="name"
                   placeholder="Enter your name"
                   type="name"
-                  invalid={invalidName}
                   required
+                  minLength={5}
                 />
-                {invalidName && <FormFeedback>Please input valid name</FormFeedback>}
               </FormGroup>
               <FormGroup>
                 <Label for="message">
@@ -165,21 +119,17 @@ const Contact = () => {
                 </Label>
                 <Input
                   value={message}
-                  onChange={e => {
-                    setMessage(e.target.value)
-                    validateMessage(e.target.value)
-                  }}
+                  onChange={e => setMessage(e.target.value)}
                   id="message"
                   name="message"
                   type="textarea"
                   placeholder="Enter your message"
                   style={{ height: 200 }}
-                  invalid={invalidMessage}
                   required
+                  minLength={10}
                 />
-                {invalidMessage && <FormFeedback>Please input valid message</FormFeedback>}
               </FormGroup>
-              <Button block disabled={disabledButton}>
+              <Button block>
                 Submit
               </Button>
             </Form>
